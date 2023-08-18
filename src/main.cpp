@@ -15,7 +15,8 @@ using std::endl;
 
 bool isInputValid(float &input)
 {
-  	float max = 1000;
+  // The rubric states that values between 0 and 100 should be tested, limit this so the start/end aren't out of the image.
+  	float max = 100;
   	float min = 0;
   return (input <= max && input >=min) ? 1:0;
 }
@@ -73,7 +74,7 @@ int main(int argc, const char **argv)
 
   	while( !isInputValid(start_x) || !cin.good())
     {
-      cout << " Invalid input value. The range is 0 - 1000. Please enter a valid number." << endl;
+      cout << " Invalid input value. The range is 0 - 100. Please enter a valid number." << endl;
       cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       cin >>start_x;
@@ -83,7 +84,7 @@ int main(int argc, const char **argv)
   	cin >> start_y;
   	while( !isInputValid(start_y) || !cin.good() )
     {
-      cout << " Invalid input value. The range is 0 - 1000. Please enter a valid number." << endl;
+      cout << " Invalid input value. The range is 0 - 100. Please enter a valid number." << endl;
       cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       cin >>start_y;
@@ -93,7 +94,7 @@ int main(int argc, const char **argv)
   	cin >> end_x;
   	while( !isInputValid(end_x) || !cin.good() )
     {
-      cout << " Invalid input value. The range is 0 - 1000. Please enter a valid number." << endl;
+      cout << " Invalid input value. The range is 0 - 100. Please enter a valid number." << endl;
       cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       cin >>end_x;
@@ -103,7 +104,7 @@ int main(int argc, const char **argv)
   	cin >> end_y;
     while( !isInputValid(end_y) || !cin.good() )
       {
-        cout << " Invalid input value. The range is 0 - 1000. Please enter a valid number." << endl;
+        cout << " Invalid input value. The range is 0 - 100. Please enter a valid number." << endl;
         cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         cin >>end_y;
